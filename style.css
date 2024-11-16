@@ -1,0 +1,261 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #000; /* Black background */
+    color: #fff; /* White text for contrast */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Color Palette */
+:root {
+    --primary-color: #0073e6; /* Blue */
+    --secondary-color: #005bb5; /* Dark Blue */
+    --accent-color: #ff9800; /* Orange */
+    --background-color-light: #000; /* Black Background */
+    --background-color-dark: #222; /* Dark Background */
+    --text-color-light: #f4f4f9; /* Light Text */
+    --text-color-dark: #333; /* Dark Text */
+    --footer-color-light: #222; /* Footer Dark */
+    --footer-color-dark: #111; /* Footer Darker */
+}
+
+/* Header Section */
+.header {
+    background: var(--primary-color);
+    padding: 1rem;
+    color: var(--text-color-light);
+}
+
+.navbar .logo {
+    font-size: 2.5rem;
+    color: var(--text-color-light);
+    text-transform: uppercase;
+}
+
+.theme-btn {
+    background: var(--accent-color);
+    color: var(--text-color-light);
+    border: none;
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 25px;
+    transition: background 0.3s ease;
+}
+
+.theme-btn:hover {
+    background: var(--secondary-color);
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    background: url('https://source.unsplash.com/1600x900/?nature,technology') no-repeat center center/cover;
+    color: var(--text-color-light);
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 1.2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.button {
+    background: var(--primary-color);
+    color: var(--text-color-light);
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 25px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.button:hover {
+    background: var(--secondary-color);
+    transform: scale(1.1);
+}
+
+/* About Section */
+.about {
+    padding: 3rem 2rem;
+    text-align: center;
+    background: var(--background-color-light);
+    color: var(--text-color-dark);
+}
+
+.about h3 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.about p {
+    font-size: 1rem;
+    color: #555;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+.about::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background: var(--primary-color);
+    margin: 1.5rem auto;
+}
+
+/* Footer Section */
+.footer {
+    background: var(--footer-color-light);
+    color: var(--text-color-light);
+    text-align: center;
+    padding: 1.5rem 0;
+}
+
+.footer p {
+    font-size: 0.9rem;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: var(--background-color-dark);
+    color: var(--text-color-light);
+}
+
+body.dark-mode .header {
+    background: linear-gradient(90deg, #444, #333);
+}
+
+body.dark-mode .hero {
+    background: url('https://source.unsplash.com/1600x900/?night,city') no-repeat center center/cover;
+}
+
+body.dark-mode .footer {
+    background: var(--footer-color-dark);
+}
+
+body.dark-mode #themeToggle {
+    background: #444;
+    color: var(--text-color-light);
+}
+
+body.dark-mode .button {
+    background: var(--secondary-color);
+    color: var(--text-color-light);
+}
+
+/* Learn More Page Styles */
+.content {
+    padding: 2rem;
+    text-align: center;
+    background: var(--background-color-light);
+    color: var(--text-color-dark);
+}
+
+.content .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
+.content h3 {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+.content p {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+.content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.content ul li {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    color: var(--text-color-dark);
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+
+    .service-cards {
+        flex-direction: column;
+    }
+}
+
+.scroll-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--primary-color);
+    color: var(--text-color-light);
+    border: none;
+    padding: 0.7rem 1rem;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+    transition: transform 0.3s;
+}
+
+.scroll-top:hover {
+    transform: scale(1.1);
+}
+
+.back-home-btn:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.1);
+}
+/* Styling for images */
+.hero-image, .about-image, .footer-image {
+    max-width: 100%;
+    height: auto;
+    margin: 1rem auto;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Adjust image size for smaller screens */
+@media (max-width: 768px) {
+    .hero-image, .about-image, .footer-image {
+        max-width: 90%;
+    }
+}
